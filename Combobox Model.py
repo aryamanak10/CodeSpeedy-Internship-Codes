@@ -1,32 +1,31 @@
 from PyQt5.QtWidgets import * 
-from PyQt5 import QtCore, QtGui 
+from PyQt5 import QtGui 
 from PyQt5.QtGui import * 
-from PyQt5.QtCore import * 
 import sys
 
-class Window(QMainWindow):
+class Window_ComboBox(QMainWindow):
 
-    def UI(self): 
-        self.combo_box = QComboBox(self)  
-        self.combo_box.setGeometry(225, 150, 150, 30) 
+    def UI(self1): 
+        self1.combo_box = QComboBox(self1)  
+        self1.combo_box.setGeometry(225, 150, 150, 30) 
         sports_list = ["Football", "Cricket", "Basketball", "Golf"] 
-        self.combo_box.setEditable(True) 
-        self.combo_box.addItems(sports_list) 
+        self1.combo_box.setEditable(True) 
+        self1.combo_box.addItems(sports_list) 
         combobox_model = QtGui.QStandardItemModel(0, 1) 
         add_item = QtGui.QStandardItem("Add model") 
         combobox_model.appendRow(add_item) 
-        self.combo_box.setModel(combobox_model) 
-        get_modelname = self.combo_box.model() 
-        label = QLabel("Model = " + str(get_modelname), self)  
+        self1.combo_box.setModel(combobox_model) 
+        get_modelname = self1.combo_box.model() 
+        label = QLabel("Model = " + str(get_modelname), self1)  
         label.setGeometry(100, 100, 800, 30) 
   
-    def __init__(self): 
+    def __init__(self1): 
         super().__init__()  
-        self.setWindowTitle("Python ComboBox Model")  
-        self.setGeometry(100, 100, 600, 400) 
-        self.UI()   
-        self.show() 
+        self1.setWindowTitle("Python ComboBox Model")  
+        self1.setGeometry(100, 100, 600, 400) 
+        self1.UI()   
+        self1.show() 
 
 App = QApplication(sys.argv) 
-window = Window() 
+window = Window_ComboBox() 
 sys.exit(App.exec()) 
