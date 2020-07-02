@@ -1,6 +1,5 @@
 import ctypes
 
-
 class DynamicArray(object):
     def __init__(self):
         self.n = 0
@@ -45,7 +44,7 @@ class DynamicArray(object):
             self.n -= 1
             return
         for i in range(ind, self.n-1):
-            self.A[i] = self.A[i+1]
+            self.A[i] = self.A[i+1]   
         self.A[self.n-1] = 0
         self.n -= 1
 
